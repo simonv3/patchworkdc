@@ -19,13 +19,13 @@ export default function RootLayout({
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="https://mirlo.space/favicon-32x32.png"
+          href="/favicon-32x32.png"
         ></link>
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="https://mirlo.space/favicon-16x16.png"
+          href="/favicon-16x16.png"
         ></link>
         <meta name="twitter:card" content="summary_large_image"></meta>
         <meta

@@ -62,13 +62,13 @@ export default async function Page() {
   return (
     <main className="flex min-h-screen flex-col p-10 max-w-7xl mx-auto px-6 ">
       <img
-        src={"/hero-image.png"}
+        src={"/wordmark.png"}
         alt="Fundraiser Hero"
         className="rounded-lg w-full h-auto"
       />
       <div className="mt-4 flex grow flex-col items-start gap-4 md:flex-row relative">
         <div className="flex flex-col gap-6 rounded-lg pt-20 flex-1 md:mb-20 lg:pr-12">
-          <h1 className="text-foreground-default font-bold text-4xl md:leading-normal">
+          <h1 className="text-foreground-default font-serif font-bold text-4xl md:leading-normal">
             Own and control a community commons in Logan Circle
           </h1>
 
@@ -90,7 +90,12 @@ export default async function Page() {
             caring world.
           </p>
 
-          <p className="text-2xl font-bold">
+          <p>
+            We're raising money to purchase a property in the heart of 14th
+            Street and Logan Circle.
+          </p>
+
+          <p className="text-2xl font-serif font-bold">
             We have an ambitious vision for a community owned third space and
             commons, but we need your help to get there.
           </p>
@@ -102,11 +107,10 @@ export default async function Page() {
             totalSupporters={totalSupporters}
           />
           <p>
-            We're raising $80,000 to put a downpayment on a property in the
-            heart of 14th Street and Logan Circle. This will secure a physical
-            space for Patchwork to operate out of, and anchor our fundraising
-            for the larger goal of purchasing and stewarding a community
-            commons.
+            We're raising $80,000 to put towards a downpayment. This will secure
+            a physical space for Patchwork to operate out of, and anchor our
+            fundraising for the larger goal of purchasing and stewarding a
+            community commons.
           </p>
 
           <h3 className="text-xl font-bold">To purchase the space outright:</h3>
