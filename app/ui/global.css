@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.post {
+  p {
+    @apply text-base
+      text-foreground-default 
+      md:text-xl 
+      md:leading-normal 
+      py-2;
+  }
+
+  a {
+    @apply text-primary-default 
+      underline
+      duration-200
+      font-bold 
+      hover:text-primary-dark 
+      focus:text-primary-dark;
+  }
+}
