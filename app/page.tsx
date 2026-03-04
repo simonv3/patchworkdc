@@ -1,8 +1,9 @@
 import "@/app/ui/global.css";
 import DonateFeed from "@/app/ui/components/DonateFeed";
 import Thermometer from "@/app/ui/components/Thermometer";
+import FinancialTable from "@/app/ui/components/FinancialTable";
+import TableOfContents from "@/app/ui/components/TableOfContents";
 import api from "@/app/lib/api";
-import React from "react";
 
 import DonateButton from "./ui/components/DonateButton";
 
@@ -40,8 +41,8 @@ export default async function Page() {
   const sinceDate = "2026-01-22";
   const byDate = "2026-03-22";
   const initialAmountRaised = 2000000;
-  const downpaymentAmount = 80000;
-  const goalAmount = 300000;
+  const downpaymentAmount = 61500;
+  const goalAmount = 285000;
   const monthlyGoal = 2000;
   const monthlySupport = 0;
 
@@ -61,6 +62,10 @@ export default async function Page() {
 
   return (
     <main className="flex min-h-screen flex-col p-10 max-w-7xl mx-auto px-6 ">
+      <TableOfContents
+        items={[{ href: "/about", label: "About Patchwork" }]}
+        title="Navigation"
+      />
       <img
         src={"/wordmark.png"}
         alt="Fundraiser Hero"
@@ -78,8 +83,16 @@ export default async function Page() {
 
           <p>
             Patchwork is a community organization that fosters local mutual aid
-            and the solidarity economy. A project of Ward 2 Mutual Aid, it’s
-            connected deeply to the organizing community in D.C.'s Ward 2.
+            and the solidarity economy. A project of long term{" "}
+            <a
+              href="https://www.every.org/ward-2-mutual-aid"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ward 2 Mutual Aid
+            </a>{" "}
+            organizers, it’s connected deeply to the organizing community in
+            D.C.
           </p>
           <p>
             Patchwork fills a critical gap in the Logan and Dupont Circles’
@@ -107,11 +120,20 @@ export default async function Page() {
             totalSupporters={totalSupporters}
           />
           <p>
-            We're raising $80,000 to put towards a downpayment. This will secure
-            a physical space for Patchwork to operate out of, and anchor our
-            fundraising for the larger goal of purchasing and stewarding a
-            community commons.
+            We're raising <strong>${downpaymentAmount.toLocaleString()}</strong>{" "}
+            to put towards a downpayment. This will secure a physical space for
+            Patchwork to operate out of, and anchor our fundraising for the
+            larger goal of purchasing and stewarding a community commons.
           </p>
+
+          <FinancialTable
+            rows={[
+              { label: "Earnest money", value: "$20,000 ✅ 🎉" },
+              { label: "Downpayment", value: "$26,500" },
+              { label: "Closing costs", value: "$15,500" },
+              { label: "Total at closing", value: "$61,500", isBold: true },
+            ]}
+          />
 
           <h3 className="text-xl font-bold">To purchase the space outright:</h3>
           <Thermometer

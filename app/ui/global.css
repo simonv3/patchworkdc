@@ -20,3 +20,12 @@
       focus:text-primary-dark;
   }
 }
+
+a {
+  @apply text-primary-default 
+    underline
+    duration-200
+    font-bold 
+    hover:text-primary-dark 
+    focus:text-primary-dark;
+}
