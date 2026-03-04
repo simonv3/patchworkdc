@@ -39,6 +39,9 @@ export default async function AboutPage() {
         showHomeLink
       />
       <div className="flex-1 max-w-4xl mx-auto px-6 py-12 flex flex-col gap-6">
+        <a href="/" className="text-primary-default hover:text-primary-dark">
+          ← Home
+        </a>
         <h1 className="text-foreground-default font-serif font-bold text-4xl md:leading-normal">
           About Patchwork
         </h1>
