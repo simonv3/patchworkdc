@@ -32,12 +32,12 @@ export default function RootLayout({
           property="og:site_name"
           content="Patchwork: Own and control a community commons"
         ></meta>
-        <meta property="og:image" content="/hero-image.png"></meta>
-        <meta property="og:image:width" content="800"></meta>
-        <meta property="og:image:height" content="400"></meta>
+        <meta property="og:image" content="/preview-image.png"></meta>
+        <meta property="og:image:width" content="1200"></meta>
+        <meta property="og:image:height" content="600"></meta>
         <meta
           property="og:image:alt"
-          content="Mirlo musicians playing music in front of a locomotive."
+          content="Patchwork: Own and control a community commons"
         ></meta>
       </head>
       <body>{children}</body>
