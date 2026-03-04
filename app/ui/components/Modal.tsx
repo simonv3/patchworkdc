@@ -1,9 +1,10 @@
 const Modal: React.FC<{
   isOpen: boolean;
+  confirmText?: string;
   onClose: () => void;
   children: React.ReactNode;
   onConfirm?: () => void;
-}> = ({ isOpen, onClose, children, onConfirm }) => {
+}> = ({ isOpen, onClose, children, onConfirm, confirmText }) => {
   if (!isOpen) return null;
 
   return (
@@ -64,7 +65,7 @@ const Modal: React.FC<{
                 focus:outline-none 
                 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
-                Let's go
+                {confirmText ?? "Let's go!"}
               </button>
               <button
                 data-modal-hide="default-modal"

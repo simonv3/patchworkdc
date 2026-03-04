@@ -3,7 +3,6 @@
 import React from "react";
 import Modal from "@/app/ui/components/Modal";
 import AmountButtons from "./AmountButtons";
-import api from "@/app/lib/api";
 import { Artist } from "@/app/page";
 
 type DonateButtonProps = {
@@ -13,7 +12,7 @@ type DonateButtonProps = {
 
 const DonateButton: React.FC<DonateButtonProps> = ({ children, artist }) => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [donationAmount, setDonationAmount] = React.useState<number>(25);
+  const [donationAmount, setDonationAmount] = React.useState<number>(100);
   const [message, setMessage] = React.useState<string>("");
 
   const toggleModal = () => {
@@ -21,15 +20,27 @@ const DonateButton: React.FC<DonateButtonProps> = ({ children, artist }) => {
   };
 
   const onConfirmation = React.useCallback(async () => {
-    const response = await api.post<
-      { price: number; email?: string; message?: string },
-      { redirectUrl: string }
-    >(`artists/${artist.id}/tip`, {
-      price: Number(donationAmount) * 100,
-      message,
-      // email,
+    const response = await fetch("/api/donations", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        artistId: artist.id,
+        price: Number(donationAmount) * 100,
+        message,
+        // email,
+      }),
     });
-    window.location.assign(response.redirectUrl);
+
+    if (!response.ok) {
+      const error = await response.json();
+      console.error("Donation failed:", error);
+      return;
+    }
+
+    const data = await response.json();
+    window.location.assign(data.redirectUrl);
     setIsOpen(false);
   }, [artist, message, donationAmount]);
 
@@ -51,7 +62,12 @@ const DonateButton: React.FC<DonateButtonProps> = ({ children, artist }) => {
       >
         {children || "Donate"}
       </button>
-      <Modal isOpen={isOpen} onClose={toggleModal} onConfirm={onConfirmation}>
+      <Modal
+        isOpen={isOpen}
+        onClose={toggleModal}
+        onConfirm={onConfirmation}
+        confirmText="Support us!"
+      >
         <p>
           Want to make a 501c3 tax-deductible donation? Please give to our
           partner organization,{" "}
@@ -105,7 +121,7 @@ const DonateButton: React.FC<DonateButtonProps> = ({ children, artist }) => {
         </div>
         <div>
           <p className="text-sm text-foreground-light mt-2">
-            By clicking "Support", you agree to the Mirlo{" "}
+            By clicking "Support us!", you agree to the Mirlo{" "}
             <a
               href="https://mirlo.space/pages/terms"
               className="underline"
