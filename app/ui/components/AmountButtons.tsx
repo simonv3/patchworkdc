@@ -59,7 +59,7 @@ const AmountButtons: React.FC<{
         <li className={"inline-block"}>
           <input
             type="radio"
-            value={"other"}
+            value="other"
             id={`priceButton-other`}
             className="hidden"
             defaultChecked={isOther}
@@ -70,10 +70,7 @@ const AmountButtons: React.FC<{
           />
           <label
             htmlFor={`priceButton-other`}
-            className="cursor-pointer block mr-2 px-3 py-2 rounded-md border border-gray-300 hover:bg-gray-100"
-            style={{
-              backgroundColor: isOther ? "#f0f0f0" : "white",
-            }}
+            className={`cursor-pointer block ${isOther ? "bg-primary-default" : ""} mr-2 px-3 py-2 rounded-md border border-gray-300 hover:bg-gray-100`}
           >
             Other gift
           </label>

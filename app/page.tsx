@@ -68,7 +68,7 @@ export default async function Page() {
       />
       <img
         src={"/wordmark.png"}
-        alt="Fundraiser Hero"
+        alt="Patchwork"
         className="rounded-lg w-full h-auto"
       />
       <div className="mt-4 flex grow flex-col items-start gap-4 md:flex-row relative">

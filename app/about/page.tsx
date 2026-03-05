@@ -151,7 +151,7 @@ export default async function AboutPage() {
           ]}
         />
         <p>
-          For a further breakdown, 1420 N Street
+          For a further breakdown, 1420 N Street{" "}
           <a href="patchworkdc@proton.me">reach out to us.</a>
         </p>
         <h2 className="text-2xl font-serif font-bold">1420 N Street</h2>

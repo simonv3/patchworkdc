@@ -28,12 +28,15 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-6 right-6 z-40 bg-primary-default text-white p-4 rounded-full shadow-lg hover:bg-primary-dark"
       >
-        {isOpen ? "✕" : "☰"}
+        Menu {isOpen ? "✕" : "☰"}
       </button>
 
       {/* Mobile menu */}
       {isOpen && (
-        <nav className="fixed inset-0 top-0 z-30 bg-white pt-20 px-6 overflow-y-auto">
+        <nav
+          className="fixed bottom-6 right-6 z-30 bg-white pt-10 pb-10 px-8 overflow-y-auto shadow-md rounded-3xl"
+          style={{ bottom: "100px" }}
+        >
           <h3 className="font-bold text-lg mb-4">{title}</h3>
           <ul className="space-y-2">
             {showHomeLink && (

@@ -1,5 +1,7 @@
+"use client";
+
 import DonateButton from "./DonateButton";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { formatCurrency, formatDate } from "@/app/lib/utils";
 import { Artist, Gift } from "@/app/page";
 
@@ -8,17 +10,33 @@ const DonateFeed: React.FC<{
   totalGifts?: number;
   gifts: Gift[];
 }> = ({ artist, gifts, totalGifts = 0 }) => {
+  const [displayedCount, setDisplayedCount] = useState(1);
+
+  useEffect(() => {
+    if (displayedCount >= gifts.length) return;
+
+    const timer = setTimeout(() => {
+      setDisplayedCount((prev) => prev + 1);
+    }, 1000); // Add a new item every 1 second
+
+    return () => clearTimeout(timer);
+  }, [displayedCount, gifts.length]);
+
+  const displayedGifts = gifts.slice(gifts.length - displayedCount);
   return (
     <div className="w-full flex flex-col items-stretch gap-3 mb-4">
       <DonateButton artist={artist}>Support</DonateButton>
-      {gifts.length > 0 && (
+      {displayedGifts.length > 0 && (
         <div className="w-full">
           <h3 className="text-lg font-bold mb-2">Recent Gifts</h3>
-          <ul className="space-y-3  ">
-            {gifts.map((gift, idx) => (
+          <ul className="space-y-3 relative">
+            {displayedGifts.map((gift, idx) => (
               <li
-                key={idx}
-                className="bg-white rounded p-3 shadow flex flex-col"
+                key={gift.datePurchased}
+                className="bg-white rounded p-3 shadow flex flex-col z-1"
+                style={{
+                  animation: `fadeIn 0.5s ease-out forwards`,
+                }}
               >
                 <span>
                   <span className="font-semibold">Someone</span> donated{" "}

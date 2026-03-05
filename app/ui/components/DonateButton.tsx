@@ -12,6 +12,7 @@ type DonateButtonProps = {
 
 const DonateButton: React.FC<DonateButtonProps> = ({ children, artist }) => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(false);
   const [donationAmount, setDonationAmount] = React.useState<number>(100);
   const [message, setMessage] = React.useState<string>("");
 
@@ -20,6 +21,7 @@ const DonateButton: React.FC<DonateButtonProps> = ({ children, artist }) => {
   };
 
   const onConfirmation = React.useCallback(async () => {
+    setIsLoading(true);
     const response = await fetch("/api/donations", {
       method: "POST",
       headers: {
@@ -36,12 +38,14 @@ const DonateButton: React.FC<DonateButtonProps> = ({ children, artist }) => {
     if (!response.ok) {
       const error = await response.json();
       console.error("Donation failed:", error);
+      setIsLoading(false);
       return;
     }
 
     const data = await response.json();
     window.location.assign(data.redirectUrl);
     setIsOpen(false);
+    setIsLoading(false);
   }, [artist, message, donationAmount]);
 
   return (
@@ -67,6 +71,7 @@ const DonateButton: React.FC<DonateButtonProps> = ({ children, artist }) => {
         onClose={toggleModal}
         onConfirm={onConfirmation}
         confirmText="Support us!"
+        isLoading={isLoading}
       >
         <p>
           Want to make a 501c3 tax-deductible donation? Please give to our
@@ -120,7 +125,7 @@ const DonateButton: React.FC<DonateButtonProps> = ({ children, artist }) => {
           ></textarea>
         </div>
         <div>
-          <p className="text-sm text-foreground-light mt-2">
+          <p className="text-sm mt-2">
             By clicking "Support us!", you agree to the Mirlo{" "}
             <a
               href="https://mirlo.space/pages/terms"

@@ -5,10 +5,7 @@ const AmountInput: React.FC<{
 }> = ({ amount, setAmount }) => {
   return (
     <>
-      <label
-        htmlFor="price"
-        className="block text-sm/6 font-medium text-gray-900"
-      >
+      <label htmlFor="price" className="block text-sm/6 font-medium">
         Enter a custom amount
       </label>
       <div className="mt-2">
