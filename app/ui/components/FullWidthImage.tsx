@@ -18,7 +18,7 @@ const FullWidthImage: React.FC<FullWidthImageProps> = ({
   return (
     <div>
       <div
-        className={`py-6 w-[100vw] ml-[calc(-50vw+50%)] overflow-hidden ${containerClassName}`}
+        className={`py-6 w-full overflow-hidden ${containerClassName}`}
         style={{
           backgroundImage: `url(${src})`,
           height,

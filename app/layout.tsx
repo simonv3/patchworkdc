@@ -59,19 +59,19 @@ export default async function RootLayout({
         ></meta>
       </head>
       <body>
-        <div className="flex min-h-screen flex-col p-10 max-w-7xl mx-auto px-6">
-          <DesktopNav
-            items={[
-              { href: "/about", label: "About us" },
-              { href: "/the-space", label: "The space" },
-              { href: "/business-plan", label: "Business plan" },
-              { href: "/getting-involved", label: "Getting involved" },
-              { href: "/faq", label: "FAQ" },
-            ]}
-          />
+        <DesktopNav
+          items={[
+            { href: "/about", label: "About us" },
+            { href: "/the-space", label: "The space" },
+            { href: "/business-plan", label: "Business plan" },
+            { href: "/getting-involved", label: "Getting involved" },
+            { href: "/faq", label: "FAQ" },
+          ]}
+        />
+        <div className="flex min-h-screen flex-col pt-20 px-6 py-10 max-w-7xl mx-auto">
           <div className="mt-4 flex grow flex-col items-start gap-4 md:flex-row relative">
             <div className="flex-1 md:mb-20 lg:pr-12">{children}</div>
-            <div className="sticky top-0 flex flex-col items-center rounded-lg md:pt-20 flex-0 w-full md:max-w-[350px]">
+            <div className="sticky top-20 flex flex-col items-center rounded-lg md:pt-20 flex-0 w-full md:max-w-[350px]">
               <DonateFeed
                 artist={artist}
                 gifts={gifts}

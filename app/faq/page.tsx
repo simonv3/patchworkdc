@@ -21,16 +21,20 @@ const faqItems: FAQItem[] = [
       "Patchwork is a community organization dedicated to fostering local mutual aid and solidarity economy. We are creating a community-owned commons in Logan Circle that will serve as a hub for creative political organizing, cultural activation, and working-class community support.",
   },
   {
+    id: "vision-of-change",
+    question: "What is your vision for our community?",
+    answer:
+      "Patchwork is rooted in the idea that lasting community change requires owned and controlled community spaces. A shared commons—controlled by and accountable to the people it serves—is fundamental to building power, trust, and solidarity. By owning our space instead of renting it, we maintain independence from market pressures and landlord interests. This allows us to keep the space affordable, community-focused, and aligned with our values. Patchwork isn't just a building; it's a model for how communities can collectively own and steward the resources they need to thrive.",
+  },
+  {
     id: "where-located",
     question: "Where is Patchwork located?",
-    answer:
-      "Patchwork will be located at 1420 N Street NW in Washington, D.C., in the heart of Logan Circle. This 1,820 square foot space will house our various community programs and services.",
+    answer: `Patchwork will be located at 1420 N Street NW in Washington, D.C., in the heart of Logan Circle. This 1,820 square foot space will house our various community programs and services. <a href="/the-space">Read more about the space</a>.`,
   },
   {
     id: "how-donation-used",
     question: "How will my donation be used?",
-    answer:
-      "Your donation supports our fundraising efforts to purchase and develop the property. Funds go towards the down payment, build-out costs, and operational runway. We aim to raise $285,000 for the property purchase and $72,000 for build-out.",
+    answer: `Your donation supports our fundraising efforts to purchase and develop the property. Funds go towards the down payment, build-out costs, and operational runway. We aim to raise $285,000 for the property purchase and $72,000 for build-out. Check out our <a href="/business-plan">business plan</a> for more details.`,
   },
   {
     id: "tax-deductible",
@@ -54,7 +58,7 @@ const faqItems: FAQItem[] = [
     id: "membership-cost",
     question: "How much does membership cost?",
     answer:
-      'We offer sliding scale memberships ranging from $10/month to $120/month depending on what you can afford. These memberships provide access to our full community commons and all our services. Membership sustains us and helps us pay necessary expenses on the space. For more, check out our <a href="/business-plan" class="text-primary-default underline hover:text-primary-dark">business plan</a>.',
+      'We offer sliding scale memberships ranging from $10/month to $120/month depending on what you can afford. These memberships provide access to our full community commons and all our services. Membership sustains us and helps us pay necessary expenses on the space. For more, Check out our <a href="/business-plan" class="text-primary-default underline hover:text-primary-dark">business plan</a>.',
   },
   {
     id: "resident-organizations",
@@ -74,12 +78,12 @@ const faqItems: FAQItem[] = [
     answer:
       "Yes, we have bands expressing interest in our affordable practice studio. If you're interested in using the space, please reach out to us for more details.",
   },
-  {
-    id: "grocery-coop",
-    question: "Tell me about the grocery co-operative?",
-    answer:
-      "We're partnering with Greens and Beans Grocery Co-operative to bring affordable, community-controlled food access to Logan Circle. The co-op will be one of the primary revenue streams for Patchwork.",
-  },
+  // {
+  //   id: "grocery-coop",
+  //   question: "Tell me about the grocery co-operative?",
+  //   answer:
+  //     "We're partnering with Greens and Beans Grocery Co-operative to bring affordable, community-controlled food access to Logan Circle. The co-op will be one of the primary revenue streams for Patchwork.",
+  // },
   {
     id: "tool-library",
     question: "What is a tool library?",
@@ -103,6 +107,13 @@ const faqItems: FAQItem[] = [
     question: "How can I get in touch with Patchwork?",
     answer:
       'You can reach us at <a href="mailto:patchworkdc@proton.me" class="text-primary-default underline hover:text-primary-dark">patchworkdc@proton.me</a>. We\'re happy to answer questions, discuss partnership opportunities, or help you get involved in the project.',
+  },
+
+  {
+    id: "if-dont-acquire",
+    question: "What happens if we don't acquire 1420 N Street?",
+    answer:
+      "While 1420 N Street is our current target and a great location, Patchwork's mission is bigger than any one building. If this particular space doesn't work out, we'll continue pursuing our vision through alternative strategies: finding another property, scaling programming through partnerships, or adjusting our approach based on what's feasible. We are committed to creating a community commons, even if the specific path shifts. We'll keep the community informed of any major changes to our plans.",
   },
 ];
 

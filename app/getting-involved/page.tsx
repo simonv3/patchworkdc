@@ -65,9 +65,14 @@ export default async function GettingInvolvedPage() {
       <div id="become-member" className="scroll-mt-20">
         <h2 className="text-2xl font-serif font-bold mb-3">Become a Member</h2>
         <p className="mb-4">
+          Our membership signup isn't live yet, but once it is, it will look
+          like this:
+        </p>
+        <p className="mb-4">
           Become part of the Patchwork community and support our mission while
           accessing our growing network of resources and spaces. Members enjoy:
         </p>
+
         <ul className="list-disc pl-6 space-y-2 mb-4">
           <li>Access to our community commons and shared spaces</li>
           <li>Tool library and equipment access</li>
@@ -85,6 +90,11 @@ export default async function GettingInvolvedPage() {
           <li>$60/month - Invested member</li>
           <li>$120+/month - Sustaining member</li>
         </ul>
+        <p>
+          Can't afford these prices?{" "}
+          <a href="mailto:patchworkdc@proton.me">Reach out</a> and we can figure
+          it out.
+        </p>
       </div>
 
       <div id="resident-organizations" className="scroll-mt-20">
@@ -105,9 +115,9 @@ export default async function GettingInvolvedPage() {
           <li>Cultural programming and community activation</li>
         </ul>
         <p>
-          Current Resident Organizations include Ward 2 Mutual Aid, Greens and
-          Beans Grocery Co-operative, and Kiazii. If you're interested in
-          becoming a Resident Organization, please reach out to us.
+          Current Resident Organizations include Ward 2 Mutual Aid, and Kiazii.
+          If you're interested in becoming a Resident Organization, please{" "}
+          <a href="mailto:patchworkdc@proton.me">reach out to us</a>.
         </p>
       </div>
 
