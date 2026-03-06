@@ -1,8 +1,18 @@
-export const formatCurrency = (amount: number, currency?: string) => {
-  return (amount / 100).toLocaleString("en-US", {
+export const formatCurrency = (
+  amount: number,
+  currency?: string,
+  noZeroes: boolean = false,
+) => {
+  const formatted = (amount / 100).toLocaleString("en-US", {
     style: "currency",
     currency: currency ?? "USD",
   });
+
+  if (noZeroes) {
+    return formatted.replace(/\.00$/, "");
+  }
+
+  return formatted;
 };
 
 export const formatDate = ({

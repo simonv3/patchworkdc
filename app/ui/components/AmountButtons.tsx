@@ -3,13 +3,12 @@ import AmountInput from "./AmountInput";
 import React from "react";
 
 const defaultGifts: { value: number }[] = [
-  { value: 10 },
-  { value: 15 },
   { value: 25 },
   { value: 50 },
   { value: 100 },
-  { value: 200 },
+  { value: 250 },
   { value: 500 },
+  { value: 1000 },
 ];
 
 const AmountButtons: React.FC<{
@@ -51,7 +50,7 @@ const AmountButtons: React.FC<{
                         : "hover:bg-background-dark"
                     }`}
               >
-                {formatCurrency((gift.value as number) * 100, currency)}
+                {formatCurrency((gift.value as number) * 100, currency, true)}
               </label>
             </li>
           );

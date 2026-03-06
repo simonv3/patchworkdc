@@ -36,29 +36,29 @@ export default async function TheSpacePage() {
       </h1>
       <p className="text-lg">
         At the heart of Patchwork is a vision for a physical space—a true
-        community commons in the heart of Logan Circle. This is where the magic
-        happens. Here's what we're building.
+        community commons in the heart of Logan Circle. Here's what we're
+        building.
       </p>
 
       <div id="location" className="scroll-mt-20">
         <h2 className="text-2xl font-serif font-bold mb-3">Location</h2>
         <p className="mb-4">
-          Patchwork will be based at <strong>1420 N Street NW</strong>, right at
-          the center of Logan Circle and Dupont Circle in Washington, D.C. This
-          is a vibrant, walkable neighborhood with deep roots in organizing,
-          culture, and community.
-        </p>
-        <p className="mb-4">
-          The space is easily accessible by public transportation and draws foot
-          traffic from thousands of residents, workers, and visitors daily. It's
-          the perfect location for a community hub that serves our neighborhood
-          and beyond.
+          Patchwork is in negotiations to acquire a space in{" "}
+          <strong>1420 N Street NW</strong>, right at the center of Logan Circle
+          and Dupont Circle in Washington, D.C. This is a vibrant, walkable
+          neighborhood close to our community.
         </p>
         <FullWidthImage
           src="/downtown-dc.png"
           alt="1420 N Street NW on the map"
           height="500px"
         />
+        <p className="mb-4">
+          The space is easily accessible by public transportation and draws foot
+          traffic from thousands of residents, workers, and visitors daily. It's
+          the perfect location for a community hub that serves our neighborhood
+          and beyond.
+        </p>
       </div>
 
       <div id="layout" className="scroll-mt-20">
@@ -70,23 +70,29 @@ export default async function TheSpacePage() {
           designed to house multiple community programs and services:
         </p>
 
+        <FullWidthImage
+          src="/current-layout.png"
+          alt="1420 N Street NW on the map"
+          height="500px"
+          description="Current layout of the space at 1420 N Street NW, showing the existing office areas. Not to scale."
+        />
+
         <div className="space-y-6">
           <div>
             <h3 className="text-xl font-bold mb-2">Community Commons</h3>
             <p>
               A large, welcoming shared space for community gatherings,
               meetings, workshops, and cultural events. This is the heart of
-              Patchwork where neighbors can gather.
+              Patchwork.
             </p>
           </div>
 
           <div>
             <h3 className="text-xl font-bold mb-2">Resident Organizations</h3>
             <p>
-              Office space for community organizations including Ward 2 Mutual
-              Aid, Greens and Beans Grocery Co-operative, and other
-              mission-driven partners. These organizations form the backbone of
-              Patchwork's ecosystem.
+              Office space for community organizations and mission-driven
+              partners. These organizations form the backbone of Patchwork's
+              ecosystem.
             </p>
           </div>
 
@@ -146,13 +152,15 @@ export default async function TheSpacePage() {
         <ul className="list-disc pl-6 space-y-3 mb-4">
           <li>
             <strong>Owned by the community, not corporations.</strong> The space
-            will eventually be transferred to a community land trust, ensuring
-            it remains permanently affordable and community-controlled.
+            will be managed by a multi-stakeholder board representing members,
+            resident organizations, and workers, ensuring that it's accountable
+            to the people it serves.
           </li>
           <li>
             <strong>Accessible to everyone.</strong> We offer sliding-scale
             pricing for memberships and services because we believe access to
-            community should not depend on how much money you have.
+            community should not depend on how much money you have. Membership
+            fees can be waived for those who can't afford them.
           </li>
           <li>
             <strong>A hub for mutual aid and organizing.</strong> This space
@@ -161,8 +169,7 @@ export default async function TheSpacePage() {
           </li>
           <li>
             <strong>A celebration of culture and creativity.</strong> From art
-            to music to food, Patchwork nurtures the creative life of the
-            community.
+            to music, Patchwork nurtures the creative life of the community.
           </li>
           <li>
             <strong>Rooted in the neighborhood.</strong> We're accountable to
@@ -234,13 +241,13 @@ export default async function TheSpacePage() {
         />
       </div>
 
-      <div className="mt-8 border-t pt-8">
+      <div className="mt-8 pt-8">
         <h2 className="text-2xl font-bold text-foreground-default mb-4">
           Help Us Make This Real
         </h2>
         <p className="mb-6">
           Every dollar you donate brings us closer to opening the doors at 1420
-          N Street. Whether it's $5, $50, or $500, your contribution matters.
+          N Street. Whether it's $25, $50, or $500, your contribution matters.
           Together, we can create the community commons we all deserve.
         </p>
       </div>

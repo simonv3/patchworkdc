@@ -88,6 +88,10 @@ const DonateButton: React.FC<DonateButtonProps> = ({ children, artist }) => {
           </a>
           .
         </p>
+        <p>
+          If you give through Ward 2 Mutual Aid, Patchwork receives 90% of the
+          gift. If you give directly to us, we receive 97%.
+        </p>
         <hr />
         <AmountButtons
           amount={donationAmount}

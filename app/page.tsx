@@ -2,9 +2,8 @@ import "@/app/ui/global.css";
 import Thermometer from "@/app/ui/components/Thermometer";
 import FinancialTable from "@/app/ui/components/FinancialTable";
 import TableOfContents from "@/app/ui/components/TableOfContents";
+import Ticker from "@/app/ui/components/Ticker";
 import api from "@/app/lib/api";
-
-import DonateButton from "./ui/components/DonateButton";
 
 export type Artist = {
   id: number;
@@ -35,6 +34,14 @@ const artistId = process.env.NEXT_PUBLIC_ARTIST_ID ?? 1;
 const goal = Number(process.env.NEXT_PUBLIC_GOAL ?? 3000);
 const campaignStartDate = "2025-07-01";
 
+export const mainMenuItems = [
+  { href: "/about", label: "About us" },
+  { href: "/the-space", label: "The space" },
+  { href: "/business-plan", label: "Business plan" },
+  { href: "/getting-involved", label: "Getting involved" },
+  { href: "/faq", label: "FAQ" },
+];
+
 export default async function Page() {
   const { result: artist } = await api.get<Artist>(`artists/${artistId}`);
   const sinceDate = "2026-01-22";
@@ -62,13 +69,7 @@ export default async function Page() {
   return (
     <div className="flex flex-col gap-6 rounded-lg md:pt-20 flex-1 md:mb-20">
       <TableOfContents
-        items={[
-          { href: "/about", label: "About us" },
-          { href: "/the-space", label: "The space" },
-          { href: "/business-plan", label: "Business plan" },
-          { href: "/getting-involved", label: "Getting involved" },
-          { href: "/faq", label: "FAQ" },
-        ]}
+        items={mainMenuItems}
         title="Navigation"
         artist={artist}
       />
@@ -77,9 +78,16 @@ export default async function Page() {
         alt="Patchwork"
         className="rounded-lg w-full h-auto"
       />
-      <h1 className="text-foreground-default font-serif font-bold text-4xl md:leading-normal">
-        Help us own and control a community commons in Logan Circle
-      </h1>
+      <Ticker
+        messages={[
+          "Help us own and control a community commons in Logan Circle",
+          "Swing by for a coffee, listen in on the neighborhood meeting",
+          "Come to the movie screening, join in a screen printing session",
+          "Build a puppet for the march, chat with someone tinkering in the makerspace",
+        ]}
+        intervalMs={4000}
+        className="text-foreground-default font-serif font-bold text-4xl md:leading-normal"
+      />
 
       <p>
         Patchwork is a community organization that fosters local mutual aid and
@@ -121,8 +129,7 @@ export default async function Page() {
       <p>
         Want to know more details?{" "}
         <a href="/business-plan">Read our full business plan</a>, check out our{" "}
-        <a href="/faq">FAQ</a>, or{" "}
-        <a href="/getting-involved">learn how to get involved</a>.
+        <a href="/faq">FAQ</a>, or <a href="/getting-involved">get involved</a>.
       </p>
 
       {/* <p>

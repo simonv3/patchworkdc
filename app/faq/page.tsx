@@ -3,7 +3,7 @@ import React from "react";
 import TableOfContents from "@/app/ui/components/TableOfContents";
 import DonateButton from "../ui/components/DonateButton";
 import api from "@/app/lib/api";
-import { Artist } from "../page";
+import { Artist, mainMenuItems } from "../page";
 
 const artistId = process.env.NEXT_PUBLIC_ARTIST_ID ?? 1;
 
@@ -36,7 +36,7 @@ const faqItems: FAQItem[] = [
     id: "tax-deductible",
     question: "Are donations tax-deductible?",
     answer:
-      "Want to make a 501c3 tax-deductible donation? Please give to our partner organization, Ward 2 Mutual Aid, at https://www.every.org/ward-2-mutual-aid",
+      'Want to make a 501c3 tax-deductible donation? Please give to our partner organization, <a href="https://www.every.org/ward-2-mutual-aid" class="text-primary-default underline hover:text-primary-dark">Ward 2 Mutual Aid</a>.',
   },
   {
     id: "what-services",
@@ -54,7 +54,7 @@ const faqItems: FAQItem[] = [
     id: "membership-cost",
     question: "How much does membership cost?",
     answer:
-      "We offer sliding scale memberships ranging from $10/month to $120/month depending on what you can afford. These memberships provide access to our full community commons and all our services.",
+      'We offer sliding scale memberships ranging from $10/month to $120/month depending on what you can afford. These memberships provide access to our full community commons and all our services. Membership sustains us and helps us pay necessary expenses on the space. For more, check out our <a href="/business-plan" class="text-primary-default underline hover:text-primary-dark">business plan</a>.',
   },
   {
     id: "resident-organizations",
@@ -66,7 +66,7 @@ const faqItems: FAQItem[] = [
     id: "artist-studios",
     question: "Can I rent an artist studio?",
     answer:
-      "Yes! Patchwork will offer affordable artist studios and shared workspace. If you're interested, please reach out to us at patchworkdc@proton.me for more information.",
+      'Yes! Patchwork will offer affordable artist studios and shared workspace. If you\'re interested, please reach out to us at <a href="mailto:patchworkdc@proton.me" class="text-primary-default underline hover:text-primary-dark">patchworkdc@proton.me</a> for more information.',
   },
   {
     id: "practice-space",
@@ -102,22 +102,17 @@ const faqItems: FAQItem[] = [
     id: "contact",
     question: "How can I get in touch with Patchwork?",
     answer:
-      "You can reach us at patchworkdc@proton.me. We're happy to answer questions, discuss partnership opportunities, or help you get involved in the project.",
+      'You can reach us at <a href="mailto:patchworkdc@proton.me" class="text-primary-default underline hover:text-primary-dark">patchworkdc@proton.me</a>. We\'re happy to answer questions, discuss partnership opportunities, or help you get involved in the project.',
   },
 ];
 
 export default async function FAQPage() {
   const { result: artist } = await api.get<Artist>(`artists/${artistId}`);
 
-  const tableOfContentsItems = faqItems.map((item) => ({
-    href: `#${item.id}`,
-    label: item.question,
-  }));
-
   return (
     <div className="flex flex-col gap-6 rounded-lg pt-20 flex-1 md:mb-20">
       <TableOfContents
-        items={tableOfContentsItems}
+        items={mainMenuItems}
         title="FAQ"
         showHomeLink
         artist={artist}
@@ -140,9 +135,10 @@ export default async function FAQPage() {
             <h2 className="text-2xl font-bold text-foreground-default mb-3">
               {item.question}
             </h2>
-            <p className="text-foreground-default leading-relaxed">
-              {item.answer}
-            </p>
+            <p
+              className="text-foreground-default leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: item.answer }}
+            />
           </div>
         ))}
       </div>

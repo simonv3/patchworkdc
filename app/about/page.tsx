@@ -22,7 +22,7 @@ export default async function AboutPage() {
       label: "For working-class community members",
     },
     { href: "#patchwork-long-term", label: "Patchwork is long-term" },
-    { href: "#business-plan", label: "Business Plan" },
+    { href: "/business-plan", label: "Business Plan" },
     { href: "#1420-n-street", label: "1420 N Street" },
     {
       href: "#revenue-stream-goals",
