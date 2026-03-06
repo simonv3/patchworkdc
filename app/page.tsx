@@ -86,7 +86,7 @@ export default async function Page() {
           "Build a puppet for the march, chat with someone tinkering in the makerspace",
         ]}
         intervalMs={4000}
-        className="text-foreground-default font-serif font-bold text-4xl md:leading-normal"
+        className="text-foreground-default font-serif font-bold text-3xl md:text-4xl md:leading-normal min-h-[150px] md:min-h-[110px]"
       />
 
       <p>
