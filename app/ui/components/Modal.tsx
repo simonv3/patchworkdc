@@ -85,7 +85,7 @@ const Modal: React.FC<{
                   focus:ring-gray-100 
                   "
               >
-                Nevermind
+                Not yet
               </button>
             </div>
           </div>

@@ -12,9 +12,9 @@ function Thermometer({
     <div>
       <div className="relative w-full h-10 flex items-center justify-between mb-2">
         <div className="flex flex-row items-end gap-1">
-          <span className="text-xl">
+          <span className="text-lg md:text-xl">
             raised:{" "}
-            <span className="font-bold text-2xl">
+            <span className="font-bold text-xl md:text-2xl">
               ${current.toLocaleString()}
             </span>
           </span>
@@ -22,7 +22,7 @@ function Thermometer({
             <span className="italic">from {totalSupporters} supporters</span>
           )}
         </div>
-        <div className="ml-2 text-xl ">
+        <div className="ml-2 text-lg md:text-xl">
           of <span className="font-bold">${goal.toLocaleString()}</span> goal
         </div>
       </div>

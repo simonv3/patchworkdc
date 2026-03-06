@@ -20,7 +20,7 @@ const FinancialTable: React.FC<FinancialTableProps> = ({ rows }) => {
               {row.label}
             </td>
             <td
-              className={`${idx === 0 ? "border-t" : ""} text-left p-2 border-b ${row.isBold ? "font-bold" : ""}`}
+              className={`${idx === 0 ? "border-t" : ""} text-left w-1/2 p-2 border-b ${row.isBold ? "font-bold" : ""}`}
             >
               {row.value}
             </td>

@@ -1,8 +1,26 @@
-export default function RootLayout({
+import "@/app/ui/global.css";
+import DonateFeed from "@/app/ui/components/DonateFeed";
+import DesktopNav from "@/app/ui/components/DesktopNav";
+import api from "@/app/lib/api";
+import { Artist, Gift } from "@/app/page";
+
+const artistId = process.env.NEXT_PUBLIC_ARTIST_ID ?? 1;
+const sinceDate = "2026-01-22";
+
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const { result: artist } = await api.get<Artist>(`artists/${artistId}`);
+
+  const { results: gifts, total: totalGifts } = (await api.getMany<Gift>(
+    `artists/${artistId}/supporters?sinceDate=${sinceDate}`,
+  )) as {
+    results: Gift[];
+    total: number;
+  };
+
   return (
     <html lang="en">
       <head>
@@ -40,7 +58,29 @@ export default function RootLayout({
           content="Patchwork: Own and control a community commons"
         ></meta>
       </head>
-      <body>{children}</body>
+      <body>
+        <div className="flex min-h-screen flex-col p-10 max-w-7xl mx-auto px-6">
+          <DesktopNav
+            items={[
+              { href: "/about", label: "About us" },
+              { href: "/the-space", label: "The space" },
+              { href: "/business-plan", label: "Business plan" },
+              { href: "/getting-involved", label: "Getting involved" },
+              { href: "/faq", label: "FAQ" },
+            ]}
+          />
+          <div className="mt-4 flex grow flex-col items-start gap-4 md:flex-row relative">
+            <div className="flex-1 md:mb-20 lg:pr-12">{children}</div>
+            <div className="sticky top-0 flex flex-col items-center rounded-lg md:pt-20 flex-0 w-full md:max-w-[350px]">
+              <DonateFeed
+                artist={artist}
+                gifts={gifts}
+                totalGifts={totalGifts}
+              />
+            </div>
+          </div>
+        </div>
+      </body>
     </html>
   );
 }

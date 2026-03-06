@@ -1,6 +1,7 @@
 "use client";
 
 import DonateButton from "./DonateButton";
+import EmailForm from "./EmailForm";
 import React, { useState, useEffect } from "react";
 import { formatCurrency, formatDate } from "@/app/lib/utils";
 import { Artist, Gift } from "@/app/page";
@@ -11,6 +12,7 @@ const DonateFeed: React.FC<{
   gifts: Gift[];
 }> = ({ artist, gifts, totalGifts = 0 }) => {
   const [displayedCount, setDisplayedCount] = useState(1);
+  const [showFollowForm, setShowFollowForm] = useState(false);
 
   useEffect(() => {
     if (displayedCount >= gifts.length) return;
@@ -26,6 +28,34 @@ const DonateFeed: React.FC<{
   return (
     <div className="w-full flex flex-col items-stretch gap-3 mb-4">
       <DonateButton artist={artist}>Support</DonateButton>
+      {!showFollowForm && (
+        <button
+          onClick={() => setShowFollowForm(!showFollowForm)}
+          className="text-lg 
+        px-6 
+        py-3 
+        bg-gray-200 
+        rounded-full
+        hover:bg-gray-300 
+        text-foreground-default font-semibold shadow-md transition-colors 
+        duration-200 focus:outline-none focus:ring-2 
+        focus:ring-gray-400 focus:ring-opacity-50"
+        >
+          Follow
+        </button>
+      )}
+      {showFollowForm && (
+        <div className="bg-gray-50 rounded-lg p-4">
+          <EmailForm
+            endpoint="/api/follow"
+            buttonText="Sign Me Up"
+            emailPlaceholder="your@email.com"
+            textareaPlaceholder="Tell us how you'd like to get involved..."
+            successMessage="Thanks for signing up! We'll keep you updated on Patchwork's progress."
+            onSuccess={() => setShowFollowForm(false)}
+          />
+        </div>
+      )}
       {displayedGifts.length > 0 && (
         <div className="w-full">
           <h3 className="text-lg font-bold mb-2">Recent Gifts</h3>

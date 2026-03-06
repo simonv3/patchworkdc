@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
+import DonateButton from "./DonateButton";
+import { Artist } from "@/app/page";
 
 type TableOfContentsItem = {
   href: string;
@@ -12,24 +14,29 @@ type TableOfContentsProps = {
   items: TableOfContentsItem[];
   title?: string;
   showHomeLink?: boolean;
+  artist?: Artist;
 };
 
 const TableOfContents: React.FC<TableOfContentsProps> = ({
   items,
   title = "Contents",
   showHomeLink = false,
+  artist,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      {/* Mobile menu button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-40 bg-primary-default text-white p-4 rounded-full shadow-lg hover:bg-primary-dark"
-      >
-        Menu {isOpen ? "✕" : "☰"}
-      </button>
+      {/* Mobile menu and donate buttons */}
+      <div className="fixed bottom-6 right-6 z-40 flex items-center gap-2">
+        {artist && <DonateButton artist={artist}>Support</DonateButton>}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="bg-primary-default text-white p-4 text-lg rounded-full shadow-xl hover:bg-primary-dark font-semibold"
+        >
+          Menu {isOpen ? "✕" : "☰"}
+        </button>
+      </div>
 
       {/* Mobile menu */}
       {isOpen && (
