@@ -99,7 +99,7 @@ export default async function Page() {
       <p>
         We're raising money to purchase a 1,800 sq. ft. space in the heart of
         14th Street and Logan Circle. To do that,{" "}
-        <mark>we need to raise $61,500 by March 22, 2026.</mark>
+        <mark>we need to raise $20,000 by March 22, 2026</mark>.
       </p>
 
       <h3 className="text-xl font-bold">How we're doing:</h3>
