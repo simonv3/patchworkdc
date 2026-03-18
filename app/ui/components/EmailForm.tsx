@@ -66,7 +66,7 @@ const EmailForm: React.FC<EmailFormProps> = ({
   );
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4 max-w-md">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-4 ">
       <div className="flex flex-col gap-2">
         <label
           htmlFor="email"

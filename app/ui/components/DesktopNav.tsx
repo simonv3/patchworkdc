@@ -11,7 +11,7 @@ type DesktopNavProps = {
 
 const DesktopNav: React.FC<DesktopNavProps> = ({ items }) => {
   return (
-    <nav className="hidden md:flex gap-6 fixed top-0 left-0 right-0 z-50 bg-white px-6 py-4 border-b border-gray-200 justify-end">
+    <nav className="hidden md:flex gap-6 fixed top-0 left-0 right-0 z-30 bg-white px-6 py-4 border-b border-gray-200 justify-end">
       <a
         href="/"
         className="font-semibold text-foreground-default hover:text-primary-default transition-colors"

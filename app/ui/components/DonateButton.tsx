@@ -13,6 +13,8 @@ type DonateButtonProps = {
 const DonateButton: React.FC<DonateButtonProps> = ({ children, artist }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
+  const [isInterestedInMembership, setIsMembershipInterested] =
+    React.useState(false);
   const [donationAmount, setDonationAmount] = React.useState<number>(100);
   const [message, setMessage] = React.useState<string>("");
 
@@ -75,7 +77,7 @@ const DonateButton: React.FC<DonateButtonProps> = ({ children, artist }) => {
         confirmText="Support us!"
         isLoading={isLoading}
       >
-        <p>
+        {/* <p>
           Want to make a 501c3 tax-deductible donation? Please give to our
           partner organization,{" "}
           <a
@@ -87,17 +89,27 @@ const DonateButton: React.FC<DonateButtonProps> = ({ children, artist }) => {
             Ward 2 Mutual Aid ➔
           </a>
           .
-        </p>
-        <p>
+        </p> */}
+        {/* <p>
           If you give through Ward 2 Mutual Aid, Patchwork receives 90% of the
           gift. If you give directly to us, we receive 97%.
         </p>
-        <hr />
+        <hr /> */}
         <AmountButtons
           amount={donationAmount}
           setAmount={setDonationAmount}
           currency={artist.user.currency}
         />
+        <div>
+          <label className="flex gap-1 items-center">
+            <input
+              type="checkbox"
+              checked={isInterestedInMembership}
+              onChange={(e) => setIsMembershipInterested(e.target.checked)}
+            />
+            Are you interested in becoming a <strong>monthly supporter</strong>?
+          </label>
+        </div>
         <div>
           {/* <p className="text-sm text-foreground-light mt-2">
             {artist.defaultPlatformFee ?? 10}% (

@@ -36,8 +36,8 @@ const campaignStartDate = "2025-07-01";
 
 export const mainMenuItems = [
   { href: "/about", label: "About us" },
-  { href: "/the-space", label: "The space" },
-  { href: "/business-plan", label: "Business plan" },
+  // { href: "/the-space", label: "The space" },
+  // { href: "/business-plan", label: "Business plan" },
   { href: "/getting-involved", label: "Getting involved" },
   { href: "/faq", label: "FAQ" },
 ];
@@ -96,7 +96,7 @@ export default async function Page() {
         perfect space becoming available, we're making the move.
       </p>
 
-      <p>
+      {/* <p>
         We're raising money to purchase a 1,800 sq. ft. space in the heart of
         14th Street and Logan Circle. To do that,{" "}
         <mark>we need to raise $20,000 by March 22, 2026</mark>.
@@ -124,7 +124,7 @@ export default async function Page() {
           { label: "Total at closing", value: "$61,500", isBold: true },
           { label: "Total purchase price", value: "$285,000", isBold: true },
         ]}
-      />
+      /> */}
 
       <p>
         Want to know more details?{" "}

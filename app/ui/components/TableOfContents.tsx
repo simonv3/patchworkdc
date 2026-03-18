@@ -28,7 +28,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
   return (
     <>
       {/* Mobile menu and donate buttons */}
-      <div className="fixed bottom-6 right-6 z-40 flex items-center gap-2">
+      <div className="fixed bottom-6 right-6 z-10 flex items-center gap-2">
         {artist && <DonateButton artist={artist}>Support</DonateButton>}
         <button
           onClick={() => setIsOpen(!isOpen)}

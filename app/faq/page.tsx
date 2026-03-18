@@ -26,22 +26,22 @@ const faqItems: FAQItem[] = [
     answer:
       "Patchwork is rooted in the idea that lasting community change requires owned and controlled community spaces. A shared commons—controlled by and accountable to the people it serves—is fundamental to building power, trust, and solidarity. By owning our space instead of renting it, we maintain independence from market pressures and landlord interests. This allows us to keep the space affordable, community-focused, and aligned with our values. Patchwork isn't just a building; it's a model for how communities can collectively own and steward the resources they need to thrive.",
   },
-  {
-    id: "where-located",
-    question: "Where is Patchwork located?",
-    answer: `Patchwork will be located at 1420 N Street NW in Washington, D.C., in the heart of Logan Circle. This 1,820 square foot space will house our various community programs and services. <a href="/the-space">Read more about the space</a>.`,
-  },
-  {
-    id: "how-donation-used",
-    question: "How will my donation be used?",
-    answer: `Your donation supports our fundraising efforts to purchase and develop the property. Funds go towards the down payment, build-out costs, and operational runway. We aim to raise $285,000 for the property purchase and $72,000 for build-out. Check out our <a href="/business-plan">business plan</a> for more details.`,
-  },
-  {
-    id: "tax-deductible",
-    question: "Are donations tax-deductible?",
-    answer:
-      'Want to make a 501c3 tax-deductible donation? Please give to our partner organization, <a href="https://www.every.org/ward-2-mutual-aid" class="text-primary-default underline hover:text-primary-dark">Ward 2 Mutual Aid</a>.',
-  },
+  // {
+  //   id: "where-located",
+  //   question: "Where is Patchwork located?",
+  //   answer: `Patchwork will be located at 1420 N Street NW in Washington, D.C., in the heart of Logan Circle. This 1,820 square foot space will house our various community programs and services. <a href="/the-space">Read more about the space</a>.`,
+  // },
+  // {
+  //   id: "how-donation-used",
+  //   question: "How will my donation be used?",
+  //   answer: `Your donation supports our fundraising efforts to purchase and develop the property. Funds go towards the down payment, build-out costs, and operational runway. We aim to raise $285,000 for the property purchase and $72,000 for build-out. Check out our <a href="/business-plan">business plan</a> for more details.`,
+  // },
+  // {
+  //   id: "tax-deductible",
+  //   question: "Are donations tax-deductible?",
+  //   answer:
+  //     'Want to make a 501c3 tax-deductible donation? Please give to our partner organization, <a href="https://www.every.org/ward-2-mutual-aid" class="text-primary-default underline hover:text-primary-dark">Ward 2 Mutual Aid</a>.',
+  // },
   {
     id: "what-services",
     question: "What services will Patchwork offer?",
@@ -108,13 +108,12 @@ const faqItems: FAQItem[] = [
     answer:
       'You can reach us at <a href="mailto:patchworkdc@proton.me" class="text-primary-default underline hover:text-primary-dark">patchworkdc@proton.me</a>. We\'re happy to answer questions, discuss partnership opportunities, or help you get involved in the project.',
   },
-
-  {
-    id: "if-dont-acquire",
-    question: "What happens if we don't acquire 1420 N Street?",
-    answer:
-      "While 1420 N Street is our current target and a great location, Patchwork's mission is bigger than any one building. If this particular space doesn't work out, we'll continue pursuing our vision through alternative strategies: finding another property, scaling programming through partnerships, or adjusting our approach based on what's feasible. We are committed to creating a community commons, even if the specific path shifts. We'll keep the community informed of any major changes to our plans.",
-  },
+  // {
+  //   id: "if-dont-acquire",
+  //   question: "What happens if we don't acquire 1420 N Street?",
+  //   answer:
+  //     "While 1420 N Street is our current target and a great location, Patchwork's mission is bigger than any one building. If this particular space doesn't work out, we'll continue pursuing our vision through alternative strategies: finding another property, scaling programming through partnerships, or adjusting our approach based on what's feasible. We are committed to creating a community commons, even if the specific path shifts. We'll keep the community informed of any major changes to our plans.",
+  // },
 ];
 
 export default async function FAQPage() {
@@ -152,23 +151,6 @@ export default async function FAQPage() {
             />
           </div>
         ))}
-      </div>
-
-      <div className="mt-8 border-t pt-8">
-        <h2 className="text-2xl font-bold text-foreground-default mb-4">
-          Still have questions?
-        </h2>
-        <p className="mb-4">
-          Reach out to us directly at{" "}
-          <a
-            href="mailto:patchworkdc@proton.me"
-            className="text-primary-default underline hover:text-primary-dark"
-          >
-            patchworkdc@proton.me
-          </a>{" "}
-          or support Patchwork by donating below.
-        </p>
-        <DonateButton artist={artist} />
       </div>
     </div>
   );
