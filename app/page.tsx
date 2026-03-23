@@ -134,8 +134,9 @@ export default async function Page() {
 
       <p>
         Want to know more details?{" "}
-        <a href="/business-plan">Read our full business plan</a>, check out our{" "}
-        <a href="/faq">FAQ</a>, or <a href="/getting-involved">get involved</a>.
+        {/* <a href="/business-plan">Read our full business plan</a>,  */}
+        Check out our <a href="/faq">FAQ</a>, or{" "}
+        <a href="/getting-involved">get involved</a>.
       </p>
 
       {/* <p>
