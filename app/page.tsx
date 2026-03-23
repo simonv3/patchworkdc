@@ -125,6 +125,12 @@ export default async function Page() {
           { label: "Total purchase price", value: "$285,000", isBold: true },
         ]}
       /> */}
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSf6ZWnushXRfYGs3BweUZAFvLTZ9n3SehIRqrvOKvQmZSUehg/viewform?embedded=true"
+        height="2600"
+      >
+        Loading…
+      </iframe>
 
       <p>
         Want to know more details?{" "}
