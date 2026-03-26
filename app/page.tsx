@@ -92,8 +92,8 @@ export default async function Page() {
       <p>
         Patchwork is a community organization that fosters local mutual aid and
         the solidarity economy. After years of organizing in the neighborhood,
-        months of figuring out the details on a property purchase, and the
-        perfect space becoming available, we're making the move.
+        months of figuring out the details on a property purchase, we are moving
+        to make this space a reality.
       </p>
 
       {/* <p>
